@@ -1,0 +1,14 @@
+
+@import "settings/*.scss";
+
+@import "components/*.scss";
+
+
+
+/* global styles */
+.c-strong {
+    display: inline-block;
+    padding: 0 2px 3px;
+    border: 2px dashed tomato;
+    line-height: 16px;
+}
