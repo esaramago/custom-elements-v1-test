@@ -3,6 +3,7 @@
 @import "generic/*.scss";
 @import "elements/*.scss";
 @import "components/*.scss";
+@import "utilities/*.scss";
 
 
 
@@ -10,6 +11,6 @@
 .c-strong {
     display: inline-block;
     padding: 0 2px 3px;
-    border: 2px dashed tomato;
+    border: 2px dashed $color-main-500;
     line-height: 16px;
 }

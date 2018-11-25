@@ -76,6 +76,15 @@ __webpack_require__(2);
 
 __webpack_require__(3);
 
+var infoContent = document.getElementById('infoContent');
+var infoExample = document.getElementById('infoExample');
+infoContent.addEventListener('input', changeInfoContent);
+function changeInfoContent() {
+    var content = infoContent.value;
+    infoExample.setAttribute('content', content);
+}
+changeInfoContent();
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -142,7 +151,8 @@ window.customElements.define('c-btn', function (_HTMLElement) {
     _createClass(_class, [{
         key: 'connectedCallback',
         value: function connectedCallback() {
-            this.innerHTML = '\n                <button type="button">sssAA</button>\n            ';
+            var label = this.getAttribute('label') || '';
+            this.innerHTML = '\n                <button type="button">' + label + '</button>\n            ';
         }
     }]);
 
@@ -176,15 +186,27 @@ window.customElements.define('c-info', function (_HTMLElement) {
     _createClass(_class, [{
         key: 'connectedCallback',
         value: function connectedCallback() {
+            // Runs when the element is added to the page
 
             var content = this.getAttribute('content');
-
-            this.innerHTML = '\n                <span class="c-info__icon">i</span>\n                <div class="c-info__content">' + content + '</div>\n            ';
+            this.innerHTML = '\n                <span class="c-info__icon">i</span>\n                <div class="c-info__content js-content">' + content + '</div>\n            ';
         }
     }, {
         key: 'attributeChangedCallback',
         value: function attributeChangedCallback(name, oldValue, newValue) {
-            console.log('Custom square element attributes changed.');
+            // Runs when an attribute passed on observedAttributes() changes
+            if (name == 'content') {
+                var content = this.querySelector('.js-content');
+                if (content) content.textContent = newValue;
+            }
+        }
+    }], [{
+        key: 'observedAttributes',
+
+
+        // Specify observed attributes so that attributeChangedCallback will work
+        get: function get() {
+            return ['content'];
         }
     }]);
 

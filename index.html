@@ -9,9 +9,21 @@
 </head>
 <body>
 
-    <c-element></c-element>
-    <c-btn></c-btn>
-    <c-info content="<p>Lorem ipsum dolor set.</p>"></c-info>
+    <c-element class="u-margin-bottom"></c-element>
+
+    <div class="u-margin-bottom">
+        <c-btn label="Button"></c-btn>
+        <c-btn label="Button 2"></c-btn>
+    </div>
+    
+    <div>
+        <label for="infoContent">Tooltip content</label>
+        <div>
+            <textarea id="infoContent" cols="30" rows="5">Lorem ipsum dolor set.</textarea>
+        </div>
+        <c-info id="infoExample" content=""></c-info>
+    </div>
+
 
     <!-- Polyfill for web components
         https://github.com/WebComponents/webcomponentsjs

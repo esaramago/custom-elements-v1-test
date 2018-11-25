@@ -2,8 +2,9 @@ window.customElements.define(
     'c-btn',
     class extends HTMLElement {
         connectedCallback() {
+            var label = this.getAttribute('label') || '';
             this.innerHTML = `
-                <button type="button">sssAA</button>
+                <button type="button">${label}</button>
             `;
         }
     }

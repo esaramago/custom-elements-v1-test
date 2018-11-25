@@ -1,9 +1,9 @@
 /* scoped styles */
 c-element {
-    font-family: Segoe UI, sans-serif;
+    display: block;
     text-align: center;
 }
 .c-element__heading {
     font-size: 4rem;
-    color: tomato;
+    color: $color-main-500;
 }
