@@ -3,6 +3,7 @@ window.customElements.define(
     class extends HTMLElement {
         connectedCallback() {
             this.innerHTML = `
+                <link rel="stylesheet" href="dist/element/element.css">
                 <h1 class="c-element__heading">Hello!</h1>
                 <p>My <strong class="c-strong">style</strong> is awesome!</p>
             `;

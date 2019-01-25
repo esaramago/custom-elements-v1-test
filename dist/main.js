@@ -112,7 +112,7 @@ window.customElements.define('c-element', function (_HTMLElement) {
     _createClass(_class, [{
         key: 'connectedCallback',
         value: function connectedCallback() {
-            this.innerHTML = '\n                <h1 class="c-element__heading">Hello!</h1>\n                <p>My <strong class="c-strong">style</strong> is awesome!</p>\n            ';
+            this.innerHTML = '\n                <link rel="stylesheet" href="dist/element/element.css">\n                <h1 class="c-element__heading">Hello!</h1>\n                <p>My <strong class="c-strong">style</strong> is awesome!</p>\n            ';
         }
     }, {
         key: 'attributeChangedCallback',
@@ -152,7 +152,7 @@ window.customElements.define('c-btn', function (_HTMLElement) {
         key: 'connectedCallback',
         value: function connectedCallback() {
             var label = this.getAttribute('label') || '';
-            this.innerHTML = '\n                <button type="button">' + label + '</button>\n            ';
+            this.innerHTML = '\n                <link rel="stylesheet" href="dist/btn/btn.css">\n                <button type="button">' + label + '</button>\n            ';
         }
     }]);
 
@@ -189,7 +189,8 @@ window.customElements.define('c-info', function (_HTMLElement) {
             // Runs when the element is added to the page
 
             var content = this.getAttribute('content');
-            this.innerHTML = '\n                <span class="c-info__icon">i</span>\n                <div class="c-info__content js-content">' + content + '</div>\n            ';
+            this.innerHTML = '\n                <link rel="stylesheet" href="dist/info/info.css">\n                <span class="c-info__icon">i</span>\n                <div class="c-info__content js-content">' + content + '</div>\n            ';
+            debugger;
         }
     }, {
         key: 'attributeChangedCallback',

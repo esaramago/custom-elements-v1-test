@@ -1,6 +1,6 @@
-import "./_element.js";
-import "./_btn.js";
-import "./_info.js";
+import "../components/element/element.js";
+import "../components/btn/btn.js";
+import "../components/info/info.js";
 
 const infoContent = document.getElementById('infoContent');
 const infoExample = document.getElementById('infoExample');

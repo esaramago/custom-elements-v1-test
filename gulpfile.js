@@ -40,7 +40,26 @@ gulp.task('styles', function () {
 
 });
 
+gulp.task('components-styles', function () {
+
+    return gulp.src('src/components/**/*.scss')
+
+        .pipe(plumber())
+
+        .pipe(sourcemaps.init())
+
+        .pipe(sass({
+            style: 'compressed'
+        }).on('error', sass.logError))
+
+        .pipe(sourcemaps.write())
+
+        .pipe(gulp.dest('./dist/'))
+
+});
+
 gulp.task('default', function () {
     gulp.watch('src/sass/**/*.scss', ['styles']);
-    gulp.watch('src/js/**/*.js', ['scripts']); // watch for webpack
+    gulp.watch('src/components/**/*.scss', ['components-styles']);
+    gulp.watch(['src/js/**/*.js', 'src/components/**/*.js'], ['scripts']); // watch for webpack
 });

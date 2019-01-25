@@ -8,12 +8,14 @@ window.customElements.define(
         }
 
         connectedCallback() { // Runs when the element is added to the page
-            
+
             var content = this.getAttribute('content');
             this.innerHTML = `
+                <link rel="stylesheet" href="dist/info/info.css">
                 <span class="c-info__icon">i</span>
                 <div class="c-info__content js-content">${content}</div>
             `;
+            debugger
         }
 
         attributeChangedCallback(name, oldValue, newValue) { // Runs when an attribute passed on observedAttributes() changes
