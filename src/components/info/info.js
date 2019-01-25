@@ -15,7 +15,6 @@ window.customElements.define(
                 <span class="c-info__icon">i</span>
                 <div class="c-info__content js-content">${content}</div>
             `;
-            debugger
         }
 
         attributeChangedCallback(name, oldValue, newValue) { // Runs when an attribute passed on observedAttributes() changes
